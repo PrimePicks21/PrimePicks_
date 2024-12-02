@@ -127,20 +127,6 @@ main {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Shake effect for the search bar */
-#search-bar.shake {
-    animation: shake 0.5s ease-in-out;
-}
-
-/* Keyframe animation for shake effect */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
-}
-
 /* Footer styles */
 .footer {
     position: fixed; /* Sticks the footer to the bottom */
