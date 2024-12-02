@@ -77,12 +77,11 @@ main {
 }
 
 img {
-  width: 100%; /* Ensures the image spans the full width of its container */
-  height: auto; /* Maintains the aspect ratio */
-  border-radius: 10px; /* Optional: Adds rounded corners */
-  display: block; /* Removes any extra space below the image */
-  object-fit: cover; /* Ensures a good fit inside the container */
-
+    width: 100%; /* Ensures the image spans the full width of its container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    display: block; /* Removes any extra space below the image */
+    object-fit: cover; /* Ensures a good fit inside the container */
 }
 
 /* Product image hover effect */
@@ -133,31 +132,6 @@ img {
     font-weight: 600;
     color: #2F4F4F;
     position: relative; /* Position relative to ensure it doesn't overlap */
-}
-
-/* Smooth fade-in for products */
-.product.fade-in {
-    opacity: 0;
-    transform: scale(0.8) rotate(10deg);
-    display: block;
-}
-
-.product.fade-in.active {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Product fade-out animation */
-.product.fade-out {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-}
-
-.product.fade-out.active {
-    opacity: 0;
-    transform: scale(0.8) rotate(10deg);
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* Media queries for responsiveness */
