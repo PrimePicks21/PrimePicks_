@@ -1,19 +1,59 @@
+/* Importing Google font "Lobster" */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 /* General body styles */
 body {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive; /* Use "Lobster" font */
     background-color: #FAEBD7;
     margin: 0;
     padding: 0;
 }
 
-/* Product image styles */
-.product img {
-    width: 100%; /* Ensure image fills container */
-    height: 300px; /* Set all images to a consistent height */
-    object-fit: cover; /* Ensures images maintain aspect ratio without stretching */
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+/* Header styles */
+header {
+    background-color: #2F4F4F;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Lobster', cursive; /* Use "Lobster" font for the header */
+}
+
+/* Search bar styles */
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #2980b9; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8); /* Add a soft glow on focus */
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Product gallery grid */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 /* Individual product styling */
@@ -24,7 +64,7 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
-    overflow: hidden;
+    overflow: hidden; /* To ensure images don't overflow on animations */
 }
 
 /* Product hover effect */
@@ -33,13 +73,28 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* General styles for product images */
+.product img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures images fill the container while maintaining their aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+}
+
+/* Product image hover effect */
+.product img:hover {
+    transform: scale(1.05);
+}
+
 /* Product title styles */
 .product h2 {
     font-size: 20px;
     margin: 10px 0;
     color: #333;
     font-weight: 600;
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive; /* Ensuring title uses "Lobster" font */
 }
 
 /* Product price styles */
@@ -60,7 +115,7 @@ body {
     margin-top: 10px;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Regular font for "Buy on Amazon" */
 }
 
 /* Product link hover effect */
@@ -68,29 +123,46 @@ body {
     background-color: #2980b9;
 }
 
-/* Product gallery grid */
-.product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
 /* Footer styles */
 .footer {
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
+    position: fixed; /* Sticks the footer to the bottom */
+    left: 50%; /* Centers the footer horizontally */
+    bottom: 0; /* Positions the footer at the bottom */
+    transform: translateX(-50%); /* Adjusts the position to be exactly centered */
+    background-color: #f1f1f1; /* Optional: background color */
+    padding: 10px; /* Optional: padding */
+    text-align: center; /* Centers the text inside the footer */
+    width: 100%; /* Ensures the footer spans the full width */
 }
 
+/* Fancy footer text styling */
 .footer {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive; /* Use "Lobster" font here */
     font-size: 16px;
     font-weight: 600;
     color: #2F4F4F;
+}
+
+/* Smooth fade-in for products */
+.product.fade-in {
+    opacity: 0;
+    transform: scale(0.8) rotate(10deg);
+    display: block;
+}
+
+.product.fade-in.active {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.product.fade-out {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.product.fade-out.active {
+    opacity: 0;
+    transform: scale(0.8) rotate(10deg);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
