@@ -1,12 +1,13 @@
 /* Importing Google font "Lobster" */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap');
 
 /* General body styles */
 body {
-    font-family: 'Lobster', cursive; /* Use "Lobster" font */
+    font-family: 'Open Sans', sans-serif; /* Using Open Sans for readability */
     background-color: #FAEBD7;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensure padding and margin are considered in element width */
 }
 
 /* Header styles */
@@ -22,13 +23,14 @@ h1 {
     font-size: 36px;
     font-weight: 600;
     letter-spacing: 1px;
-    font-family: 'Lobster', cursive; /* Use "Lobster" font for the header */
+    font-family: 'Lobster', cursive;
+    margin-bottom: 20px;
 }
 
 /* Search bar styles */
 #search-bar {
-    width: 50%;
-    padding: 10px;
+    width: 60%;
+    padding: 12px;
     font-size: 16px;
     border: 2px solid #3498db;
     border-radius: 25px;
@@ -39,19 +41,20 @@ h1 {
 
 #search-bar:focus {
     outline: none;
-    border-color: #2980b9; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8); /* Add a soft glow on focus */
+    border-color: #2980b9; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8); /* Glow effect on focus */
 }
 
 /* Main content styles */
 main {
     padding: 20px;
+    margin-top: 40px;
 }
 
 /* Product gallery grid */
 .product-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -63,8 +66,8 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
-    overflow: hidden; /* To ensure images don't overflow on animations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
 }
 
 /* Product hover effect */
@@ -79,7 +82,7 @@ main {
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
 }
 
 /* Product image hover effect */
@@ -89,11 +92,11 @@ main {
 
 /* Product title styles */
 .product h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px 0;
     color: #333;
     font-weight: 600;
-    font-family: 'Lobster', cursive; /* Ensuring title uses "Lobster" font */
+    font-family: 'Lobster', cursive;
 }
 
 /* Product price styles */
@@ -106,7 +109,7 @@ main {
 /* Product link button styles */
 .product a {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #3498db;
     color: white;
     text-decoration: none;
@@ -114,7 +117,7 @@ main {
     margin-top: 10px;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    font-family: 'Arial', sans-serif; /* Regular font for "Buy on Amazon" */
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Product link hover effect */
@@ -122,26 +125,17 @@ main {
     background-color: #2980b9;
 }
 
-/* Add transition for smooth scaling and opacity changes */
-.product {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Footer styles */
+/* Fancy footer styling */
 .footer {
-    position: fixed; /* Sticks the footer to the bottom */
-    left: 50%; /* Centers the footer horizontally */
-    bottom: 0; /* Positions the footer at the bottom */
-    transform: translateX(-50%); /* Adjusts the position to be exactly centered */
-    background-color: #f1f1f1; /* Optional: background color */
-    padding: 10px; /* Optional: padding */
-    text-align: center; /* Centers the text inside the footer */
-    width: 100%; /* Ensures the footer spans the full width */
-}
-
-/* Fancy footer text styling */
-.footer {
-    font-family: 'Lobster', cursive; /* Use "Lobster" font here */
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Lobster', cursive;
     font-size: 16px;
     font-weight: 600;
     color: #2F4F4F;
@@ -169,4 +163,27 @@ main {
     opacity: 0;
     transform: scale(0.8) rotate(10deg);
     transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Smooth transition for buttons and other elements */
+button, a {
+    transition: all 0.3s ease;
+}
+
+/* Adding a soft background gradient */
+header {
+    background: linear-gradient(145deg, #2F4F4F, #1e3c3d);
+}
+
+/* Adding responsive media query */
+@media (max-width: 768px) {
+    /* Adjust grid layout for smaller screens */
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* Expand search bar width on smaller screens */
+    #search-bar {
+        width: 80%;
+    }
 }
