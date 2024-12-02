@@ -3,7 +3,7 @@
 
 /* General body styles */
 body {
-    font-family: 'Lobster', cursive; /* Use "Lobster" font */
+    font-family: 'Lobster', cursive;
     background-color: #FAEBD7;
     margin: 0;
     padding: 0;
@@ -15,14 +15,12 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative;
 }
 
 h1 {
     font-size: 36px;
     font-weight: 600;
     letter-spacing: 1px;
-    font-family: 'Lobster', cursive; /* Use "Lobster" font for the header */
 }
 
 /* Search bar styles */
@@ -32,20 +30,21 @@ h1 {
     font-size: 16px;
     border: 2px solid #3498db;
     border-radius: 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    display: block;
     transition: all 0.3s ease;
 }
 
 #search-bar:focus {
     outline: none;
-    border-color: #2980b9; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8); /* Add a soft glow on focus */
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8);
 }
 
 /* Main content styles */
 main {
     padding: 20px;
+    padding-bottom: 100px; /* Add extra space to avoid footer overlap */
 }
 
 /* Product gallery grid */
@@ -63,8 +62,12 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
-    overflow: hidden; /* To ensure images don't overflow on animations */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 /* Product hover effect */
@@ -73,14 +76,14 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* General styles for product images */
+/* Product image styles - ensuring all images are the same size */
 .product img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* Ensures images fill the container while maintaining their aspect ratio */
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Fixed height for uniform size */
+    object-fit: cover; /* Ensures image fills the container while keeping aspect ratio */
     border-radius: 8px;
     margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Product image hover effect */
@@ -94,7 +97,6 @@ main {
     margin: 10px 0;
     color: #333;
     font-weight: 600;
-    font-family: 'Lobster', cursive; /* Ensuring title uses "Lobster" font */
 }
 
 /* Product price styles */
@@ -115,32 +117,23 @@ main {
     margin-top: 10px;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    font-family: 'Arial', sans-serif; /* Regular font for "Buy on Amazon" */
 }
 
-/* Product link hover effect */
 .product a:hover {
     background-color: #2980b9;
 }
 
 /* Footer styles */
 .footer {
-    position: fixed; /* Sticks the footer to the bottom */
-    left: 50%; /* Centers the footer horizontally */
-    bottom: 0; /* Positions the footer at the bottom */
-    transform: translateX(-50%); /* Adjusts the position to be exactly centered */
-    background-color: #f1f1f1; /* Optional: background color */
-    padding: 10px; /* Optional: padding */
-    text-align: center; /* Centers the text inside the footer */
-    width: 100%; /* Ensures the footer spans the full width */
-}
-
-/* Fancy footer text styling */
-.footer {
-    font-family: 'Lobster', cursive; /* Use "Lobster" font here */
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Lobster', cursive;
     font-size: 16px;
     font-weight: 600;
     color: #2F4F4F;
+    position: relative; /* Position relative to ensure it doesn't overlap */
 }
 
 /* Smooth fade-in for products */
@@ -156,6 +149,7 @@ main {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+/* Product fade-out animation */
 .product.fade-out {
     opacity: 1;
     transform: scale(1) rotate(0deg);
@@ -165,4 +159,19 @@ main {
     opacity: 0;
     transform: scale(0.8) rotate(10deg);
     transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .product img {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #search-bar {
+        width: 80%;
+    }
 }
