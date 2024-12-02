@@ -76,14 +76,13 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Product image styles - ensuring all images are the same size */
-.product img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out;
+img {
+  width: 100%; /* Ensures the image spans the full width of its container */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  display: block; /* Removes any extra space below the image */
+  object-fit: cover; /* Ensures a good fit inside the container */
+
 }
 
 /* Product image hover effect */
